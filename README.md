@@ -1,25 +1,33 @@
-# Coupe Library Reference Manual #
+# Noon to Night Color Transfer
+Torch implementation for scoring sharpness of a blur image.
+![result](/assets/result.jpg)
+Network structure for transformation network looks:
+![network](/assets/network.png)
 
-__Coupe__ is an open source computational photography and image processing software library, which is developed by POSTECH computer graphics laboratory.
+This repository contains train and test codes for reproduce.
+Pretrained network model and dataset will be distributed soon.
 
-## Coupe Packages ##
+--------------------------
 
-  * Image Processing
-    * [bilateralTextureFiltering](bilateralTextureFiltering) decomposes textures from a given image.
-    * [deconvWithOutlier](deconvWithOutlier) is non-blind image deconvolution with outlier handling.
+## Prerequisites
+- torch
 
-## License ##
-This software is being made available under the terms in the [LICENSE](LICENSE) file.
+## Getting Started
+### Installation
+- Install torch from http://torch.ch/
+- Clone this repo:
+```bash
+git clone https://github.com/posgraph/coupe.noon-to-night.git
+cd coupe.noon_to_night/Noon\ to\ Night
+```
 
-Any exemptions to these terms requires a license from the Pohang University of Science and Technology.
-
-## About Coupe Project ##
-Project ‘COUPE’ aims to develop software that evaluates and improves the quality of images and videos based on big visual data. To achieve the goal, we extract sharpness, color, composition features from images and develop technologies for restoring and improving by using it. In addition, personalization technology through user preference analysis is under study.  
-  
-Please checkout out other Coupe repositories in our [Posgraph](https://github.com/posgraph) github organization.
-
-## Useful Links ##
-
-  * [Coupe Library](http://coupe.postech.ac.kr/)
-  * [POSTECH CG Lab.](http://cg.postech.ac.kr/)
-  
+## Training and Test Details
+- you need to specify directories for dataset, checkpoint and sample in main.py
+- To train a model,  
+```bash
+th train.lua
+```
+- To test the model,
+```bash
+th inference.lua
+```
