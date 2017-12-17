@@ -1,8 +1,10 @@
 # Noon to Night Color Transfer
-Torch implementation for scoring sharpness of a blur image.
+Torch implementation for transferring noon image to night image.
+
 ![result](/assets/result.jpg)
+
 Network structure for transformation network looks:
-![network](/assets/network.png)
+![network](/assets/model.png)
 
 This repository contains train and test codes for reproduce.
 Pretrained network model and dataset will be distributed soon.
